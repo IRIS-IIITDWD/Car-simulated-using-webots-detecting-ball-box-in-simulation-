@@ -1,0 +1,255 @@
+#VRML_SIM R2020b utf8
+DEF wwwwwww WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.8493700382930813 0.5002061990512819 0.16841703144480102 0.7548081874696122
+  position 1.4373477502163259 1.9964582379160614 2.2560686521808937
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 1 0 -0.523595307179586
+  floorSize 1.5 1.5
+}
+DEF c Robot {
+  translation 0.167105 0.039708 -0.147419
+  rotation -0.00010826969394608078 0.9999999935914927 -3.3086070867937686e-05 0.660412070607531
+  children [
+    Solid {
+      translation 0 0.15 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.02 0.25 0.02
+          }
+        }
+      ]
+      name "solid(4)"
+    }
+    SliderJoint {
+      jointParameters JointParameters {
+        axis 0 1 0
+      }
+      device [
+        LinearMotor {
+          name "linear"
+          minPosition -2
+          maxPosition 0.2
+        }
+      ]
+      endPoint Solid {
+        translation -6.74634e-14 0.19 0.08
+        rotation 0 1 0 1.5708
+        children [
+          Shape {
+            appearance PBRAppearance {
+            }
+            geometry Box {
+              size 0.15 0.02 0.02
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 1 0
+              anchor -0.075 1 0
+            }
+            device [
+              DEF RM RotationalMotor {
+                name "RM"
+              }
+            ]
+            endPoint Solid {
+              translation -0.0886604 -2.12463e-07 -0.00499992
+              rotation 0.4668230760888999 -0.3582060583850849 0.8085571317891633 -2.0309753071795864
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.02
+                  }
+                }
+                Camera {
+                  translation 0 0.01 0
+                  rotation 0 0 1 1.57
+                  name "CAM"
+                  width 640
+                  height 640
+                }
+              ]
+            }
+          }
+        ]
+        name "solid(5)"
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 598.3974016079668
+        anchor -0.0600136 -1.22993e-08 0.0500152
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation -0.060013624395776344 1.0651113297078763e-06 0.05001899377061471
+        rotation 0.5624083460836291 -0.5619600359742379 0.6065457692732761 2.050447985647081
+        children [
+          DEF Wheels Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE Wheels
+        physics DEF Wheels Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 601.981654912548
+        anchor -0.06 1.19197e-05 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.05999999860147881 1.1894944583979519e-05 -0.0499999313320475
+        rotation -0.49309989930695053 0.492707039187468 0.7170022753371107 1.8967457239013625
+        children [
+          DEF Wheels Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE Wheels
+        physics DEF Wheels Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -65.15030995694661
+        anchor 0.06 1.17837e-05 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel3"
+        }
+      ]
+      endPoint Solid {
+        translation 0.06 1.1819791343727312e-05 -0.04999996105806629
+        rotation -0.6759479082192865 0.6754103267361516 0.2948140361518355 2.5677763747223494
+        children [
+          DEF Wheels Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE Wheels
+        physics DEF Wheels Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -61.56657094412121
+        anchor 0.06 1.17729e-05 0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel4"
+        }
+      ]
+      endPoint Solid {
+        translation 0.05999999906461281 1.1760194039656246e-05 0.04999995464881992
+        rotation 0.5092640872325152 -0.5088590676426281 0.6940551409888904 1.9273972443922704
+        children [
+          DEF Wheels Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        boundingObject USE Wheels
+        physics DEF Wheels Physics {
+        }
+      }
+    }
+    DEF Body Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.05 0.2
+      }
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "my_controller_keyboard"
+}
+Solid {
+  translation 0 0.1 0.71
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Sphere {
+        radius 0.1
+      }
+    }
+  ]
+}
+Solid {
+  translation -1.18965e-06 2.27873e-07 -0.75
+  rotation 6.41193e-07 -9.45041e-07 1 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.15 0.15 0.15
+      }
+    }
+  ]
+  name "solid(1)"
+}
